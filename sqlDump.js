@@ -38,6 +38,10 @@ const main = async () => {
             db_obj[map[i]] = parseFloat(
               db_obj[map[i]].replace(/[^0-9.-]+/g, "")
             );
+
+            if (isNaN(db_obj[map[i]])) {
+              db_obj[map[i]] = null;
+            }
           }
 
           if (map[i] === "date") {
